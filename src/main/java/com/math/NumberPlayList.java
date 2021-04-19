@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlayList {
     public static void main(String[] argv){
@@ -53,5 +54,12 @@ public class NumberPlayList {
         myNumberList.forEach(n-> {
             System.out.println("mth6 forEach double value="+ doubleFunction.apply(n));
         });
+
+        //method 7 implicit lambda to check even
+        Predicate<Integer> isEvenFunction = n -> n > 0 && n%2 == 0;
+        myNumberList.forEach(n-> {
+            System.out.println("mthod7 forEach value for "+n+"checkfor even" + isEvenFunction.test(n));
+        });
+
     }
 }
